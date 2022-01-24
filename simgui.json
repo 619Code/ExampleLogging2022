@@ -3,9 +3,17 @@
     "types": {
       "/FMSInfo": "FMSInfo",
       "/LiveWindow/ExampleSubsystem": "Subsystem",
+      "/LiveWindow/Ungrouped/PIDController[1]": "PIDController",
       "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
       "/Shuffleboard/RobotContainer/m_autoCommand": "Command",
       "/Shuffleboard/RobotContainer/m_exampleSubsystem": "Subsystem"
+    },
+    "windows": {
+      "/Shuffleboard/RobotContainer/m_autoCommand": {
+        "window": {
+          "visible": true
+        }
+      }
     }
   },
   "NetworkTables": {

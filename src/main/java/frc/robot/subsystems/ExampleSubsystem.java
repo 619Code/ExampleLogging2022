@@ -4,12 +4,17 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import io.github.oblarg.oblog.Loggable;
+import io.github.oblarg.oblog.annotations.Config;
 import io.github.oblarg.oblog.annotations.Log;
 
 public class ExampleSubsystem extends SubsystemBase implements Loggable {
+
+  @Config.PIDController
+  private PIDController exampleController;
 
   @Log
   private int output;
@@ -18,6 +23,7 @@ public class ExampleSubsystem extends SubsystemBase implements Loggable {
   public ExampleSubsystem() {
     timer = new Timer();
     timer.start();
+    exampleController = new PIDController(.1, .2, .3);
   }
 
   @Override
@@ -28,7 +34,8 @@ public class ExampleSubsystem extends SubsystemBase implements Loggable {
       this.output = this.output + 1;
       this.timer.reset();
       this.timer.start();
-      System.out.println(this.output);
+      System.out.println("timer: " + this.output);
+      System.out.println("pid: " + this.exampleController.getP() + " " + this.exampleController.getI() + " " + this.exampleController.getD());
     }
   }
 
@@ -36,12 +43,5 @@ public class ExampleSubsystem extends SubsystemBase implements Loggable {
   public void simulationPeriodic() {
     // This method will be called once per scheduler run during simulation
     // This method will be called once per scheduler run
-    if (timer.hasElapsed(1))
-    {
-      this.output = this.output + 1;
-      this.timer.reset();
-      this.timer.start();
-      System.out.println(this.output);
-    }
   }
 }
