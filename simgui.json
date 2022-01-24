@@ -1,0 +1,31 @@
+{
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/LiveWindow/ExampleSubsystem": "Subsystem",
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/Shuffleboard/RobotContainer/m_autoCommand": "Command",
+      "/Shuffleboard/RobotContainer/m_exampleSubsystem": "Subsystem"
+    }
+  },
+  "NetworkTables": {
+    "LiveWindow": {
+      "ExampleSubsystem": {
+        "open": true
+      },
+      "open": true
+    },
+    "Shuffleboard": {
+      "RobotContainer": {
+        "m_autoCommand": {
+          "open": true
+        },
+        "m_exampleSubsystem": {
+          "open": true
+        },
+        "open": true
+      },
+      "open": true
+    }
+  }
+}
